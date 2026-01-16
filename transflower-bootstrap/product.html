@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transflower - Products</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    .card-img-top {
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .card {
+      border-radius: 15px;
+    }
+
+    .nav-tabs .nav-link {
+      font-weight: 500;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ================= PRODUCTS SECTION ================= -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-5 fw-bold">Our Products</h2>
+
+    <div class="row g-4">
+
+      <!-- Product 1 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="./image/rd.jpg" class="card-img-top" alt="Red Roses">
+          <div class="card-body text-center">
+            <h5 class="card-title">Red Roses</h5>
+            <p class="text-muted">Elegant bouquet for special moments</p>
+            <p class="fw-bold">₹499</p>
+            <a href="#" class="btn btn-outline-primary">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="./image/Vibrant crocus.jpg" class="card-img-top" alt="Tulip Delight">
+          <div class="card-body text-center">
+            <h5 class="card-title">Tulip Delight</h5>
+            <p class="text-muted">Fresh tulips to brighten your day</p>
+            <p class="fw-bold">₹399</p>
+            <a href="#" class="btn btn-outline-primary">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="./image/download (2).jpg" class="card-img-top" alt="Sunflower Joy">
+          <div class="card-body text-center">
+            <h5 class="card-title">Sunflower Joy</h5>
+            <p class="text-muted">Bring sunshine into your home</p>
+            <p class="fw-bold">₹299</p>
+            <a href="#" class="btn btn-outline-primary">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= TAB COLLECTION SECTION ================= -->
+<section class="py-5 bg-white">
+  <div class="container">
+
+    <h2 class="text-center mb-4 fw-bold">Explore Our Collections</h2>
+
+    <!-- Tabs -->
+    <ul class="nav nav-tabs justify-content-center mb-4" role="tablist">
+      <li class="nav-item">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#roses">Roses</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tulips">Tulips</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#orchids">Orchids</button>
+      </li>
+    </ul>
+
+    <!-- Tab Content -->
+    <div class="tab-content">
+
+      <!-- Roses -->
+      <div class="tab-pane fade show active" id="roses">
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+              <img src="./image/bookest.jpg" class="card-img-top" alt="Rose Bouquet">
+              <div class="card-body text-center">
+                <h5 class="card-title">Red Rose Bouquet</h5>
+                <p class="fw-bold">₹599</p>
+                <a href="#" class="btn btn-outline-primary btn-sm">Buy Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tulips -->
+      <div class="tab-pane fade" id="tulips">
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+              <img src="./image/tulip1.jpg" class="card-img-top" alt="Pink Tulips">
+              <div class="card-body text-center">
+                <h5 class="card-title">Pink Tulips</h5>
+                <p class="text-muted">
+                  Soft pink tulips symbolizing care & affection
+                </p>
+                <p class="fw-bold">₹499</p>
+                <a href="#" class="btn btn-outline-primary btn-sm">Buy Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Orchids -->
+      <div class="tab-pane fade" id="orchids">
+        <div class="text-center mt-4">
+          <p class="fs-5">🌸 Orchid arrangements launching next week</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-light text-center py-3">
+  <p class="mb-0">&copy; 2025 Transflower Store. All rights reserved.</p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
