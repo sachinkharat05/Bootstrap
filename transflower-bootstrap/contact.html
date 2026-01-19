@@ -1,24 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Transflower</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <style>
+    .bg-pink {
+      background-color: #e83e8c;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-pink">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">🌼 Transflower</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="product.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+<!-- Contact Section -->
 <section class="py-5 bg-light">
   <div class="container">
-    <h2 class="text-center mb-4">Get in Touch</h2>
+    <h2 class="text-center mb-4 fw-bold">Get in Touch</h2>
+
     <div class="row justify-content-center">
       <div class="col-md-6">
-        <form>
-          <div class="mb-3">
-            <label class="form-label">Your Name</label>
-            <input type="text" class="form-control" placeholder="Enter your name">
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Email</label>
-            <input type="email" class="form-control" placeholder="Enter your email">
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Message</label>
-            <textarea class="form-control" rows="4" placeholder="Write your message"></textarea>
-          </div>
-          <button class="btn btn-primary w-100">Send Message</button>
-        </form>
-      </div>
-    </div>
+
+  <!-- Success Alert (form वर ठेवायचा) -->
+  <div id="successAlert" class="alert alert-success d-none text-center">
+    ✅ Thank you! Your message has been sent successfully.
   </div>
+
+  <!-- Form -->
+  <form id="contactForm">
+
+    <div class="mb-3">
+      <label class="form-label">Your Name</label>
+      <input type="text" class="form-control" placeholder="Enter your name" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input type="email" class="form-control" placeholder="Enter your email" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Message</label>
+      <textarea class="form-control" rows="4" placeholder="Write your message" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-danger w-100">
+      Send Message
+    </button>
+
+  </form>
+</div>
+
 </section>
+
+<!-- Bootstrap JS (IMPORTANT) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
