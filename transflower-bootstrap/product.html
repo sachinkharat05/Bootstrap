@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,8 +15,12 @@
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f8f9fa;
+      background: url("https://i.pinimg.com/736x/1a/80/c4/1a80c4fab193890f7f9fa0ff2d157acc.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
     }
+
 
     /* Pink Theme */
     .bg-pink {
@@ -49,252 +54,242 @@
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-pink sticky-top shadow">
-  <div class="container">
-    <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
-      🌼 <span class="ms-2">Transflower</span>
-    </a>
+  <!-- ================= NAVBAR ================= -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-pink">
+    <div class="container">
+      <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+        🌼 <span class="ms-2">Transflower</span>
+      </a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto gap-2">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link active" href="product.html">Products</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-      </ul>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto gap-2">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="product.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<!-- ================= PRODUCTS ================= -->
-<section class="py-5">
-  <div class="container">
-    <h2 class="text-center mb-5 fw-bold text-pink">Our Products</h2>
+  <!-- ================= PRODUCTS ================= -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5 fw-bold text-dark">Our Products</h2>
+
+      <div class="row g-4">
+
+        <!-- Product Card -->
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="./image/red rose.jpg" class="card-img-top">
+            <div class="card-body text-center">
+              <h5>Red Roses</h5>
+              <p class="text-muted">Elegant bouquet for special moments</p>
+              <p class="fw-bold">₹499</p>
+              <div class="d-grid gap-2">
+                <a class="btn btn-outline-primary">Buy Now</a>
+                <a class="btn btn-primary"><i class="bi bi-cart-plus"></i> Add to Cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="./image/tublips.jpg" class="card-img-top">
+            <div class="card-body text-center">
+              <h5>Tulip Delight</h5>
+              <p class="text-muted">Fresh tulips to brighten your day</p>
+              <p class="fw-bold">₹399</p>
+              <div class="d-grid gap-2">
+                <a class="btn btn-outline-primary">Buy Now</a>
+                <a class="btn btn-primary"><i class="bi bi-cart-plus"></i> Add to Cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="./image/sun.jpg" class="card-img-top">
+            <div class="card-body text-center">
+              <h5>Sunflower Joy</h5>
+              <p class="text-muted">Bring sunshine into your home</p>
+              <p class="fw-bold">₹299</p>
+              <div class="d-grid gap-2">
+                <a class="btn btn-outline-primary">Buy Now</a>
+                <a class="btn btn-primary"><i class="bi bi-cart-plus"></i> Add to Cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="container my-5">
+    <h2 class="text-center mb-4 text-dark fw-bold">
+      Our Bestselling Bouquets
+    </h2>
 
     <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm text-center">
+          <img src="./image/Red Rose  Bouquets.jpg" class="card-img-top bouquet-img" alt="Red Roses">
+          <div class="card-body">
+            <h5 class="fw-bold">Red Roses</h5>
+            <p class="text-muted mb-3">₹599</p>
+            <button class="btn btn-outline-primary w-100">Buy Now</button>
+          </div>
+        </div>
+      </div>
 
-      <!-- Product Card -->
-      <div class="col-12 col-sm-6 col-md-4">
-        <div class="card h-100 shadow-sm">
-          <img src="./image/red rose.jpg" class="card-img-top">
-          <div class="card-body text-center">
-            <h5>Red Roses</h5>
-            <p class="text-muted">Elegant bouquet for special moments</p>
-            <p class="fw-bold">₹499</p>
-            <div class="d-grid gap-2">
-              <a class="btn btn-outline-primary">Buy Now</a>
-              <a class="btn btn-primary"><i class="bi bi-cart-plus"></i> Add to Cart</a>
+      <!-- Card 2 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm text-center">
+          <img src="./image/Yellow Roses.jpg" class="card-img-top bouquet-img" alt="Yellow Tulips">
+          <div class="card-body">
+            <h5 class="fw-bold">Yellow Roses</h5>
+            <p class="text-muted mb-3">₹699</p>
+            <button class="btn btn-outline-primary w-100">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm text-center">
+          <img src="./image/white orchids bouquet.jpg" class="card-img-top bouquet-img" alt="White Orchids">
+          <div class="card-body">
+            <h5 class="fw-bold">White Orchids</h5>
+            <p class="text-muted mb-3">₹799</p>
+            <button class="btn btn-outline-primary w-100">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+  </section>
+
+  </section>
+
+  <!-- ================= TAB COLLECTION ================= -->
+  <section class="py-5 ">
+    <div class="container">
+      <h2 class="text-center mb-4 fw-bold text-dark">Explore Our Collections</h2>
+
+      <ul class="nav nav-tabs justify-content-center mb-4">
+        <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#roses">Roses</button>
+        </li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tulips">Tulips</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#orchids">Orchids</button>
+        </li>
+      </ul>
+
+      <div class="tab-content">
+
+
+
+        <!-- ================= ROSES TAB ================= -->
+        <div class="tab-pane fade show active" id="roses">
+          <p class="fs-5 text-center mb-4">🌹 Premium Rose Bouquets Available</p>
+
+          <div class="row g-4 justify-content-center">
+            <div class="col-12 col-sm-6 col-md-4">
+              <div class="card h-100 shadow-sm">
+                <img src="./image/White Rose.jpg" class="card-img-top" alt="White Roses">
+
+                <div class="card-body text-center">
+                  <h5>White Roses</h5>
+                  <p class="fw-bold">₹399</p>
+
+                  <div class="d-flex justify-content-center gap-2">
+                    <a href="checkout.html" class="btn btn-outline-primary">Buy Now</a>
+
+                    <button class="btn btn-primary add-to-cart" data-name="White Roses" data-price="399">
+                      <i class="bi bi-cart-plus"></i> Add to Cart
+                    </button>
+                  </div>
+
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="col-12 col-sm-6 col-md-4">
-        <div class="card h-100 shadow-sm">
-          <img src="./image/tublips.jpg" class="card-img-top">
-          <div class="card-body text-center">
-            <h5>Tulip Delight</h5>
-            <p class="text-muted">Fresh tulips to brighten your day</p>
-            <p class="fw-bold">₹399</p>
-            <div class="d-grid gap-2">
-              <a class="btn btn-outline-primary">Buy Now</a>
-              <a class="btn btn-primary"><i class="bi bi-cart-plus"></i> Add to Cart</a>
+
+        <!-- ================= TULIPS TAB ================= -->
+        <div class="tab-pane fade" id="tulips">
+          <p class="fs-5 text-center mb-4">🌷 Fresh Tulips Collection</p>
+
+          <div class="row g-4 justify-content-center">
+            <div class="col-12 col-sm-6 col-md-4">
+              <div class="card h-100 shadow-sm">
+                <img src="./image/Yellow Tulips  Bouquets.jpg" class="card-img-top" alt="Yellow Tulips">
+
+                <div class="card-body text-center">
+                  <h5>Yellow Tulips</h5>
+                  <p class="fw-bold">₹459</p>
+
+                  <div class="d-flex justify-content-center gap-2">
+                    <a href="checkout.html" class="btn btn-outline-primary">Buy Now</a>
+
+                    <button class="btn btn-primary add-to-cart" data-name="Yellow Tulips" data-price="459">
+                      <i class="bi bi-cart-plus"></i> Add to Cart
+                    </button>
+                  </div>
+
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="col-12 col-sm-6 col-md-4">
-        <div class="card h-100 shadow-sm">
-          <img src="./image/sun.jpg" class="card-img-top">
-          <div class="card-body text-center">
-            <h5>Sunflower Joy</h5>
-            <p class="text-muted">Bring sunshine into your home</p>
-            <p class="fw-bold">₹299</p>
-            <div class="d-grid gap-2">
-              <a class="btn btn-outline-primary">Buy Now</a>
-              <a class="btn btn-primary"><i class="bi bi-cart-plus"></i> Add to Cart</a>
+
+        <!-- ================= ORCHIDS TAB ================= -->
+        <div class="tab-pane fade" id="orchids">
+          <p class="fs-5 text-center mb-4">🌸 Orchid Arrangements Launching Soon</p>
+
+          <div class="row g-4 justify-content-center">
+            <div class="col-12 col-sm-6 col-md-4">
+              <div class="card h-100 shadow-sm opacity-75">
+                <img src="./image/Purple orchid bouquet.jpg" class="card-img-top" alt="Purple Orchid">
+
+                <div class="card-body text-center">
+                  <h5>Purple Orchid</h5>
+                  <p class="text-muted">Launching Soon</p>
+
+                  <div class="d-flex justify-content-center gap-2">
+                    <a class="btn btn-outline-secondary disabled">Buy Now</a>
+                    <button class="btn btn-secondary" disabled>Coming Soon</button>
+                  </div>
+
+                </div>
+              </div>
             </div>
           </div>
         </div>
+
+
       </div>
 
-    </div>
-  </div>
-</section>
-
-<section class="container my-5">
-  <h2 class="text-center mb-4 text-danger fw-bold">
-    Our Bestselling Bouquets
-  </h2>
-
-  <div class="row g-4">
-    <!-- Card 1 -->
-    <div class="col-12 col-md-6 col-lg-3">
-      <div class="card h-100 shadow-sm text-center">
-        <img src="./image/Red Rose  Bouquets.jpg" class="card-img-top bouquet-img" alt="Red Roses">
-        <div class="card-body">
-          <h5 class="fw-bold">Red Roses</h5>
-          <p class="text-muted mb-3">₹599</p>
-          <button class="btn btn-outline-danger w-100">Buy Now</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="col-12 col-md-6 col-lg-3">
-      <div class="card h-100 shadow-sm text-center">
-        <img src="./image/Yellow Roses.jpg" class="card-img-top bouquet-img" alt="Yellow Tulips">
-        <div class="card-body">
-          <h5 class="fw-bold">Yellow Roses</h5>
-          <p class="text-muted mb-3">₹699</p>
-          <button class="btn btn-outline-danger w-100">Buy Now</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="col-12 col-md-6 col-lg-3">
-      <div class="card h-100 shadow-sm text-center">
-        <img src="./image/white orchids bouquet.jpg" class="card-img-top bouquet-img" alt="White Orchids">
-        <div class="card-body">
-          <h5 class="fw-bold">White Orchids</h5>
-          <p class="text-muted mb-3">₹799</p>
-          <button class="btn btn-outline-danger w-100">Buy Now</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 4 -->
-    <div class="col-12 col-md-6 col-lg-3">
-      <div class="card h-100 shadow-sm text-center">
-        <img src="./image/pink lilies bouquet.jpg" class="card-img-top bouquet-img" alt="Pink Lilies">
-        <div class="card-body">
-          <h5 class="fw-bold">Pink Lilies</h5>
-          <p class="text-muted mb-3">₹749</p>
-          <button class="btn btn-outline-danger w-100">Buy Now</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-</section>
-
-<!-- ================= TAB COLLECTION ================= -->
-<section class="py-5 bg-white">
-  <div class="container">
-    <h2 class="text-center mb-4 fw-bold text-pink">Explore Our Collections</h2>
-
-    <ul class="nav nav-tabs justify-content-center mb-4">
-      <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#roses">Roses</button></li>
-      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tulips">Tulips</button></li>
-      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#orchids">Orchids</button></li>
-    </ul>
-
-   <div class="tab-content">
-
-    
-
-  <!-- ================= ROSES TAB ================= -->
-<div class="tab-pane fade show active" id="roses">
-  <p class="fs-5 text-center mb-4">🌹 Premium Rose Bouquets Available</p>
-
-  <div class="row g-4 justify-content-center">
-    <div class="col-12 col-sm-6 col-md-4">
-      <div class="card h-100 shadow-sm">
-        <img src="./image/White Rose.jpg" class="card-img-top" alt="White Roses">
-
-        <div class="card-body text-center">
-          <h5>White Roses</h5>
-          <p class="fw-bold">₹399</p>
-
-          <div class="d-flex justify-content-center gap-2">
-            <a href="checkout.html" class="btn btn-outline-primary">Buy Now</a>
-
-            <button class="btn btn-primary add-to-cart"
-              data-name="White Roses" data-price="399">
-              <i class="bi bi-cart-plus"></i> Add to Cart
-            </button>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+  </section>
 
 
-  <!-- ================= TULIPS TAB ================= -->
- <div class="tab-pane fade" id="tulips">
-  <p class="fs-5 text-center mb-4">🌷 Fresh Tulips Collection</p>
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-pink text-white text-center py-3">
+    <p class="mb-0">&copy; 2025 Transflower Store 🌸</p>
+  </footer>
 
-  <div class="row g-4 justify-content-center">
-    <div class="col-12 col-sm-6 col-md-4">
-      <div class="card h-100 shadow-sm">
-        <img src="./image/Yellow Tulips  Bouquets.jpg" class="card-img-top" alt="Yellow Tulips">
-
-        <div class="card-body text-center">
-          <h5>Yellow Tulips</h5>
-          <p class="fw-bold">₹459</p>
-
-          <div class="d-flex justify-content-center gap-2">
-            <a href="checkout.html" class="btn btn-outline-primary">Buy Now</a>
-
-            <button class="btn btn-primary add-to-cart"
-              data-name="Yellow Tulips" data-price="459">
-              <i class="bi bi-cart-plus"></i> Add to Cart
-            </button>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-  <!-- ================= ORCHIDS TAB ================= -->
-  <div class="tab-pane fade" id="orchids">
-  <p class="fs-5 text-center mb-4">🌸 Orchid Arrangements Launching Soon</p>
-
-  <div class="row g-4 justify-content-center">
-    <div class="col-12 col-sm-6 col-md-4">
-      <div class="card h-100 shadow-sm opacity-75">
-        <img src="./image/Purple orchid bouquet.jpg" class="card-img-top" alt="Purple Orchid">
-
-        <div class="card-body text-center">
-          <h5>Purple Orchid</h5>
-          <p class="text-muted">Launching Soon</p>
-
-          <div class="d-flex justify-content-center gap-2">
-            <a class="btn btn-outline-secondary disabled">Buy Now</a>
-            <button class="btn btn-secondary" disabled>Coming Soon</button>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- ================= FOOTER ================= -->
-<footer class="bg-pink text-white text-center py-3">
-  <p class="mb-0">&copy; 2025 Transflower Store 🌸</p>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>
