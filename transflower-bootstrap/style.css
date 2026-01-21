@@ -161,3 +161,20 @@ section {
   background-size: cover;
   background-position: center;
 }
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+h2 {
+  letter-spacing: 1px;
+}
+
+.btn-danger {
+  border-radius: 25px;
+}
+
+footer {
+  font-size: 0.9rem;
+}
