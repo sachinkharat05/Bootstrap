@@ -9,7 +9,6 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
-    /* ===== FULL PAGE BACKGROUND FIX ===== */
     html, body {
       height: 100%;
       margin: 0;
@@ -18,40 +17,19 @@
     body {
       font-family: 'Segoe UI', sans-serif;
       min-height: 100vh;
-      background-image: url("https://i.pinimg.com/736x/1a/80/c4/1a80c4fab193890f7f9fa0ff2d157acc.jpg");
+      background: url("https://i.pinimg.com/736x/1a/80/c4/1a80c4fab193890f7f9fa0ff2d157acc.jpg") no-repeat center;
       background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
     }
 
-    /* ===== PINK THEME ===== */
     .bg-pink {
       background-color: #d63384 !important;
     }
 
-    .text-pink {
-      color: #d63384;
-    }
-
-    .btn-pink {
-      background-color: #d63384;
-      color: white;
-      border-radius: 30px;
-      padding: 8px 22px;
-    }
-
-    .btn-pink:hover {
-      background-color: #ad2168;
-      color: pink;
-    }
-
-    /* ===== HERO SECTION ===== */
     .hero-section {
       background: rgba(255, 255, 255, 0.75);
       backdrop-filter: blur(6px);
     }
 
-    /* ===== CARDS ===== */
     .product-img {
       height: 250px;
       object-fit: cover;
@@ -68,10 +46,6 @@
       transform: translateY(-8px);
       box-shadow: 0 12px 30px rgba(214, 51, 132, 0.3);
     }
-
-    section {
-      background: transparent;
-    }
   </style>
 </head>
 
@@ -81,44 +55,51 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-pink">
   <div class="container">
     <a class="navbar-brand fw-bold" href="index.html">🌼 Transflower</a>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="product.html">Products</a></li>
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-2">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="product.html">Products</a></li>
         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
         <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
-      </ul>
-      </ul>
+
+        <!-- Search -->
+        <li class="nav-item">
+          <form class="d-flex" role="search">
+            <input class="form-control form-control-sm me-2" type="search"
+                   placeholder="Search products" aria-label="Search">
+            <button class="btn btn-light btn-sm" type="submit">Search</button>
+          </form>
+        </li>
       </ul>
     </div>
   </div>
 </nav>
 
 <!-- ================= HERO ================= -->
-<section class="text-center py-5">
+<section class="hero-section text-center py-5">
   <div class="container">
-    <h1 class="fw-bold text-dark">Welcome to Transflower Store</h1>
+    <h1 class="fw-bold">Welcome to Transflower Store</h1>
     <p class="lead">Beautiful flowers, delivered fresh to your doorstep.</p>
-    <a href="register.html" class="btn btn-primary btn-lg mt-3">Shop Now</a>
+    <a href="product.html" class="btn btn-primary btn-lg mt-3">Shop Now</a>
   </div>
-  
-  
 </section>
 
 <!-- ================= PRODUCTS ================= -->
 <section class="py-5">
   <div class="container">
-    <h2 class="text-center mb-5 fw-bold text-dark">Our Featured Flowers</h2>
+    <h2 class="text-center mb-5 fw-bold">Our Featured Flowers</h2>
 
     <div class="row g-4">
       <div class="col-md-4">
         <div class="card text-center h-100">
-          <img src="./image/red rose.jpg" class="card-img-top product-img" alt="Red Roses">
+          <img src="./image/red rose.jpg" class="card-img-top product-img">
           <div class="card-body">
             <h5 class="fw-bold">Red Roses</h5>
             <p>Elegant bouquet for special moments.</p>
@@ -129,7 +110,7 @@
 
       <div class="col-md-4">
         <div class="card text-center h-100">
-          <img src="./image/tublips.jpg" class="card-img-top product-img" alt="Tulips">
+          <img src="./image/tublips.jpg" class="card-img-top product-img">
           <div class="card-body">
             <h5 class="fw-bold">Tulip Delight</h5>
             <p>Fresh tulips to brighten your day.</p>
@@ -140,7 +121,7 @@
 
       <div class="col-md-4">
         <div class="card text-center h-100">
-          <img src="./image/sun.jpg" class="card-img-top product-img" alt="Sunflowers">
+          <img src="./image/sun.jpg" class="card-img-top product-img">
           <div class="card-body">
             <h5 class="fw-bold">Sunflower Joy</h5>
             <p>Bring sunshine into your home.</p>
@@ -148,42 +129,27 @@
           </div>
         </div>
       </div>
-      
-      </div>
     </div>
   </div>
+</section>
 
-  <button class="carousel-control-prev" type="button" data-bs-target="#storeCarousel" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#storeCarousel" data-bs-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </button>
-</div>
-  </div>
-  <section class="container my-5">
+<!-- ================= TESTIMONIALS ================= -->
+<section class="container my-5">
   <h2 class="text-center mb-4">What Our Customers Say</h2>
 
   <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-
       <div class="carousel-item active text-center">
-        <blockquote class="blockquote">
-          <p class="mb-4">
-            "Transflower never disappoints! My anniversary bouquet was perfect."
-          </p>
-          <footer class="blockquote-footer">Sneha K.</footer>
-        </blockquote>
+        <p class="mb-4">"Transflower never disappoints! My anniversary bouquet was perfect."</p>
+        <footer class="blockquote-footer">Sneha K.</footer>
       </div>
 
       <div class="carousel-item text-center">
-        <blockquote class="blockquote">
-          <p class="mb-4">
-            "Fresh flowers and fast delivery — simply beautiful!"
-          </p>
-          <footer class="blockquote-footer">Rahul M.</footer>
-        </blockquote>
+        <p class="mb-4">"Fresh flowers and fast delivery — simply beautiful!"</p>
+        <footer class="blockquote-footer">Rahul M.</footer>
       </div>
+    </div>
+  </div>
 </section>
 
 <!-- ================= FOOTER ================= -->
@@ -191,8 +157,6 @@
   <p class="mb-0">&copy; 2025 Transflower Store 🌸</p>
 </footer>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
