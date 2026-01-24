@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&family=Waterfall&display=swap');
+
+*{
+    margin: 0rem;
+    padding: 0rem;
+}
+body{
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+}
+.contact_bar{
+    margin: 20px auto;
+    height: 7vh;
+    background-color: white;
+    padding: 0.2rem;
+    text-align: end;
+}
+.contact_bar img{
+    width: 2vw;
+    padding: 0.8rem;
+}
+.nav_Bar{
+    display:flex;
+    list-style-type: none;
+    justify-content: space-evenly;
+    background-color: rgb(222, 222, 233);
+    margin: 0px auto;
+    padding: 20px 0px;
+    align-items: center;
+    height: 5vh;
+}
+.nav_Bar a{
+    color: rgb(44, 38, 38);
+    text-decoration: none;
+}
+.img_Size{
+    padding: 5px;
+}
+.watch_Img img{
+    width: 100%;
+    margin-bottom: 5%;
+}
+.G-Shock_Analog{
+    display: flex;
+    border: 1px solid white;
+    border-radius: 5px;
+    justify-content: space-evenly;
+    width: 90vw;
+    padding: 20px;
+    align-items: center;
+    margin: 0 auto;
+    margin-top:7%;
+    margin-bottom: 7%;
+}
+
+.titan_Watch{
+    display: flex;
+    border: 1px solid white;
+    border-radius: 5px;
+    justify-content: space-evenly;
+    width: 90vw;
+    padding: 20px;
+    align-items: center;
+    margin: 0 auto;
+    margin-top:7%;
+    margin-bottom: 7%;
+}
+
+.fossil_Watch{
+    display: flex;
+    border: 1px solid white;
+    border-radius: 5px;
+    justify-content: space-evenly;
+    width: 90vw;
+    padding: 20px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top:7%;
+    margin-bottom: 7%;
+}
+.content{
+    display: grid;
+    border: solid 1px grey;
+    border-radius: 5px;
+    padding: 1rem;
+    text-align: center;
+}
+.content img{
+    justify-content: center;
+}
+.text{
+    font-size: medium;
+}
+.more_Text{
+    display: none;
+}
+hr{
+    size: 5rem;
+    width: 80%;
+    margin: 0 auto;
+}
+.main_Div h2{
+    font-weight: bold;
+    font-size: 30px;
+    padding: 0.2 rem;
+    margin-left: 10%;
+    margin-bottom: 1%;
+}
+footer{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2rem;
+    margin: 0 auto;
+    
+}
+.footer_Box img{
+    align-items: center;
+    
+}
+
+.cate_Box{
+    display: block;
+}
+.cate_Box:hover .dropDown{
+    display: block;
+} 
+.dropDown{
+    display: none;
+    position: absolute;
+}
+.dropDown li {
+     border: solid 1px rgb(247, 243, 243);
+     box-shadow: 1px 2px 1px 1px;
+     background-color: aliceblue;
+     width: 5vw;
+    text-align: center;
+    height: 10%;
+
+}
