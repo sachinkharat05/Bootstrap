@@ -8,6 +8,7 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
+  <!-- Custom CSS -->
   <style>
     html, body {
       height: 100%;
@@ -16,17 +17,16 @@
 
     body {
       font-family: 'Segoe UI', sans-serif;
-      min-height: 100vh;
-      background: url("https://i.pinimg.com/736x/1a/80/c4/1a80c4fab193890f7f9fa0ff2d157acc.jpg") no-repeat center;
-      background-size: cover;
+      background: url("https://i.pinimg.com/736x/1a/80/c4/1a80c4fab193890f7f9fa0ff2d157acc.jpg")
+                  no-repeat center center/cover;
     }
 
     .bg-pink {
-      background-color: #d63384 !important;
+      background-color: #d63384;
     }
 
     .hero-section {
-      background: rgba(255, 255, 255, 0.75);
+      background: rgba(255, 255, 255, 0.8);
       backdrop-filter: blur(6px);
     }
 
@@ -38,8 +38,8 @@
     .card {
       border: none;
       border-radius: 20px;
-      background: rgba(255, 255, 255, 0.9);
-      transition: 0.3s;
+      background: rgba(255, 255, 255, 0.95);
+      transition: 0.3s ease;
     }
 
     .card:hover {
@@ -68,24 +68,16 @@
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
         <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
-
-        <li class="nav-item">
-          <form class="d-flex" role="search">
-            <input class="form-control form-control-sm me-2" type="search"
-                   placeholder="Search products" aria-label="Search">
-            <button class="btn btn-light btn-sm" type="submit">Search</button>
-          </form>
-        </li>
       </ul>
     </div>
   </div>
 </nav>
 
-<!-- ================= HERO ================= -->
+<!-- ================= HERO SECTION ================= -->
 <section class="hero-section text-center py-5">
   <div class="container">
     <h1 class="fw-bold">Welcome to Transflower Store</h1>
-    <p class="lead">Beautiful flowers, delivered fresh to your doorstep.</p>
+    <p class="lead">Fresh flowers delivered with love & care.</p>
     <a href="product.html" class="btn btn-primary btn-lg mt-3">Shop Now</a>
   </div>
 </section>
@@ -93,38 +85,41 @@
 <!-- ================= PRODUCTS ================= -->
 <section class="py-5">
   <div class="container">
-    <h2 class="text-center mb-5 fw-bold">Our Featured Flowers</h2>
+    <h2 class="text-center fw-bold mb-5">Our Featured Flowers</h2>
 
     <div class="row g-4">
+      <!-- Product 1 -->
       <div class="col-md-4">
-        <div class="card text-center h-100">
+        <div class="card h-100 text-center">
           <img src="./image/red rose.jpg" class="card-img-top product-img" alt="Red Roses">
           <div class="card-body">
             <h5 class="fw-bold">Red Roses</h5>
             <p>Elegant bouquet for special moments.</p>
-            <a class="btn btn-primary">Buy Now</a>
+            <a href="#" class="btn btn-primary">Buy Now</a>
           </div>
         </div>
       </div>
 
+      <!-- Product 2 -->
       <div class="col-md-4">
-        <div class="card text-center h-100">
-          <img src="./image/tublips.jpg" class="card-img-top product-img" alt="Tulip Flowers">
+        <div class="card h-100 text-center">
+          <img src="./image/tublips.jpg" class="card-img-top product-img" alt="Tulips">
           <div class="card-body">
             <h5 class="fw-bold">Tulip Delight</h5>
             <p>Fresh tulips to brighten your day.</p>
-            <a class="btn btn-primary">Buy Now</a>
+            <a href="#" class="btn btn-primary">Buy Now</a>
           </div>
         </div>
       </div>
 
+      <!-- Product 3 -->
       <div class="col-md-4">
-        <div class="card text-center h-100">
+        <div class="card h-100 text-center">
           <img src="./image/sun.jpg" class="card-img-top product-img" alt="Sunflower">
           <div class="card-body">
             <h5 class="fw-bold">Sunflower Joy</h5>
             <p>Bring sunshine into your home.</p>
-            <a class="btn btn-primary">Buy Now</a>
+            <a href="#" class="btn btn-primary">Buy Now</a>
           </div>
         </div>
       </div>
@@ -137,21 +132,20 @@
   <h2 class="text-center mb-4">What Our Customers Say</h2>
 
   <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
+    <div class="carousel-inner text-center">
 
-      <div class="carousel-item active text-center">
-        <p class="mb-4">"Transflower never disappoints! My anniversary bouquet was perfect."</p>
+      <div class="carousel-item active">
+        <p>"Transflower never disappoints! My anniversary bouquet was perfect."</p>
         <footer class="blockquote-footer">Sneha K.</footer>
       </div>
 
-      <div class="carousel-item text-center">
-        <p class="mb-4">"Fresh flowers and fast delivery — simply beautiful!"</p>
+      <div class="carousel-item">
+        <p>"Fresh flowers and fast delivery — simply beautiful!"</p>
         <footer class="blockquote-footer">Rahul M.</footer>
       </div>
 
     </div>
 
-    <!-- Controls -->
     <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
       <span class="carousel-control-prev-icon"></span>
     </button>
@@ -162,41 +156,15 @@
 </section>
 
 <!-- ================= FOOTER ================= -->
-<footer class="bg-pink text-white pt-5">
-  <div class="container">
-    <div class="row">
-
-      <div class="col-md-4 mb-4">
-        <h5 class="fw-bold">🌼 Transflower</h5>
-        <p>Delivering fresh flowers with love and care.</p>
-      </div>
-
-      <div class="col-md-4 mb-4">
-        <h5 class="fw-bold">Quick Links</h5>
-        <ul class="list-unstyled">
-          <li><a href="index.html" class="text-white text-decoration-none">Home</a></li>
-          <li><a href="product.html" class="text-white text-decoration-none">Products</a></li>
-          <li><a href="about.html" class="text-white text-decoration-none">About</a></li>
-          <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
-        </ul>
-      </div>
-
-      <div class="col-md-4 mb-4">
-        <h5 class="fw-bold">Connect With Us</h5>
-        <p>Email: support@transflower.com</p>
-        <p>Phone: +91 98765 43210</p>
-      </div>
-
-    </div>
-
-    <hr class="border-light">
-
-    <div class="text-center pb-3">
-      © 2025 Transflower Store | Designed by <strong>Sachin Kharat</strong>
-    </div>
+<footer class="bg-pink text-white pt-4">
+  <div class="container text-center">
+    <p class="mb-1">© 2025 Transflower Store</p>
+    <p class="mb-0">Designed by <strong>Sachin Kharat</strong></p>
   </div>
 </footer>
 
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
