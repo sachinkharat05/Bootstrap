@@ -55,9 +55,6 @@ Transflower-Store/
 ├── login.html
 ├── README.md
 
-yaml
-Copy code
-
 ---
 
 ## 🚀 How to Run the Project
@@ -94,4 +91,4 @@ Login & registration are UI-based only
 
 🙋‍♂️ Author
 Sachin Kharat
-BCA Student | Frontend Developer
+BCA Student | Frontend Developer.
