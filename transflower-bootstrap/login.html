@@ -3,61 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login | Transflower Store</title>
+  <title>Login | Transflower</title>
 
-  <!-- Bootstrap CSS -->
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap & Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: url("https://i.pinimg.com/736x/1a/80/c4/1a80c4fab193890f7f9fa0ff2d157acc.jpg");
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-    }
-
-    .bg-pink {
-      background-color: #e83e8c;
-    }
-
-    .login-card {
-      background: rgba(255,255,255,0.9);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-    }
-
-    .btn-pink {
-      background-color: #e83e8c;
-      color: white;
-      border-radius: 12px;
-    }
-
-    .btn-pink:hover {
-      background-color: #d63384;
-    }
-
-    .form-control {
-      border-radius: 12px;
-    }
-  </style>
+  <!-- Custom theme -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="page-auth">
 
 <!-- ================= NAVBAR ================= -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-pink shadow">
+<nav class="navbar navbar-expand-lg">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="index.html">🌼 Transflower</a>
+    <a class="navbar-brand" href="index.html">Transflower</a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
+      <ul class="navbar-nav ms-auto align-items-center gap-3">
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="product.html">Products</a></li>
         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
@@ -68,47 +43,42 @@
 </nav>
 
 <!-- ================= LOGIN SECTION ================= -->
-<section class="vh-100 d-flex align-items-center">
+<section class="py-5 d-flex align-items-center" style="min-height: 85vh;">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-md-4">
+      <div class="col-md-6 col-lg-4">
 
-        <div class="login-card p-4">
-
-          <h3 class="text-center fw-bold mb-4">🌸 Welcome Back</h3>
+        <div class="glass-card">
+          <h3 class="text-center fw-bold mb-3">Welcome back</h3>
+          <p class="text-center text-muted mb-4">Sign in to continue blooming with Transflower.</p>
 
           <!-- Success Alert -->
-          <div id="successAlert" class="alert alert-success d-none text-center">
-            ✅ Login Successful! Welcome back 🌼
+          <div id="successAlert" class="alert alert-success d-none text-center mb-3">
+            Login successful. Welcome back!
           </div>
 
           <form id="loginForm" novalidate>
-
             <div class="mb-3">
-              <label class="form-label fw-semibold">Email</label>
-              <input type="email" class="form-control" required>
-              <div class="invalid-feedback">Enter valid email</div>
+              <label class="form-label fw-semibold">Email address</label>
+              <input type="email" class="form-control form-control-rounded" required>
+              <div class="invalid-feedback">Please enter a valid email.</div>
             </div>
 
             <div class="mb-3">
               <label class="form-label fw-semibold">Password</label>
-              <input type="password" class="form-control" required>
-              <div class="invalid-feedback">Enter password</div>
+              <input type="password" class="form-control form-control-rounded" required>
+              <div class="invalid-feedback">Please enter your password.</div>
             </div>
 
-            <button type="submit" class="btn btn-pink w-100 fw-bold">
+            <button type="submit" class="btn btn-rose w-100 mb-3">
               Login
             </button>
 
-            <p class="mt-3 text-center">
-              New user?
-              <a href="register.html" class="fw-bold text-danger text-decoration-none">
-                Create an account
-              </a>
+            <p class="text-center mb-0">
+              New to Transflower?
+              <a href="register.html" class="fw-semibold text-decoration-none">Create an account</a>
             </p>
-
           </form>
-
         </div>
 
       </div>
@@ -116,24 +86,58 @@
   </div>
 </section>
 
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h5>Transflower</h5>
+        <p class="opacity-75 mb-0">Curated bouquets and fresh blooms, delivered with care.</p>
+      </div>
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="product.html">Products</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5>Connect</h5>
+        <p class="opacity-75 mb-2">Email: kharatsachin012.com</p>
+        <a href="https://wa.me/919637661382?text=Hello%20I%20want%20to%20order%20flowers" target="_blank"
+           class="btn btn-success whatsapp-btn w-auto px-3">
+          <i class="bi bi-whatsapp"></i>
+          <span>Chat on WhatsApp</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom text-center">
+      © 2025 Transflower Store — Designed by <strong>Sachin Kharat</strong>
+    </div>
+  </div>
+</footer>
+
 <!-- ================= JS ================= -->
 <script>
-const form = document.getElementById("loginForm");
-const alertBox = document.getElementById("successAlert");
+  const form = document.getElementById("loginForm");
+  const alertBox = document.getElementById("successAlert");
 
-form.addEventListener("submit", function(e) {
-  e.preventDefault();
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-  if (!form.checkValidity()) {
-    e.stopPropagation();
-  } else {
-    alertBox.classList.remove("d-none");
-    form.reset();
-    form.classList.remove("was-validated");
-  }
+    if (!form.checkValidity()) {
+      e.stopPropagation();
+    } else {
+      alertBox.classList.remove("d-none");
+      form.reset();
+      form.classList.remove("was-validated");
+    }
 
-  form.classList.add("was-validated");
-});
+    form.classList.add("was-validated");
+  });
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

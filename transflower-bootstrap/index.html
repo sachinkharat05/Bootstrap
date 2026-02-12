@@ -3,125 +3,448 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Transflower Store</title>
+  <title>Transflower — Fresh Blooms Delivered</title>
 
-  <!-- Bootstrap CSS -->
+  <!-- Fonts: Cormorant Garamond + DM Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Bootstrap Icons (WhatsApp icon साठी) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="style.css">
 
-  <!-- Custom Styles -->
   <style>
+    :root {
+      --cream: #faf8f5;
+      --blush: #e8d5d0;
+      --rose: #b76e79;
+      --deep-rose: #8b4d5a;
+      --sage: #9aaf8a;
+      --charcoal: #2c2c2c;
+      --muted: #6b6b6b;
+    }
+
+    * {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: 'Segoe UI', sans-serif;
-      min-height: 100vh;
-      background: url("https://i.pinimg.com/736x/1a/80/c4/1a80c4fab193890f7f9fa0ff2d157acc.jpg")
-        no-repeat center / cover;
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--charcoal);
+      overflow-x: hidden;
     }
 
-    .bg-pink {
-      background-color: #d63384;
+    h1, h2, .display-4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
     }
 
+    /* ===== Navbar ===== */
+    .navbar {
+      background: rgba(250, 248, 245, 0.92) !important;
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(183, 110, 121, 0.1);
+      padding: 1rem 0;
+      transition: all 0.4s ease;
+    }
+
+    .navbar.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.06); }
+
+    .navbar-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--deep-rose) !important;
+    }
+
+    .nav-link {
+      color: var(--charcoal) !important;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--rose);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    .nav-link:hover::after, .nav-link.active::after { width: 80%; }
+    .nav-link.active { color: var(--rose) !important; }
+
+    .search-input {
+      border: 1px solid var(--blush);
+      border-radius: 50px;
+      padding: 0.5rem 1.25rem;
+      font-size: 0.9rem;
+    }
+    .search-input:focus {
+      border-color: var(--rose);
+      box-shadow: 0 0 0 3px rgba(183, 110, 121, 0.15);
+    }
+
+    /* ===== Hero ===== */
     .hero-section {
-      background: rgba(255, 255, 255, 0.75);
-      backdrop-filter: blur(6px);
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      background: 
+        radial-gradient(ellipse 80% 60% at 50% 40%, rgba(232, 213, 208, 0.5), transparent 60%),
+        linear-gradient(180deg, var(--cream) 0%, var(--blush) 100%);
+      position: relative;
+      overflow: hidden;
     }
 
-    .product-img {
-      height: 250px;
-      object-fit: cover;
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 10%;
+      right: 5%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(183, 110, 121, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 8s ease-in-out infinite;
     }
 
-    .card {
+    .hero-section::after {
+      content: '';
+      position: absolute;
+      bottom: 15%;
+      left: 3%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(154, 175, 138, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 10s ease-in-out infinite reverse;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(20px, -20px); }
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--blush);
+      color: var(--deep-rose);
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.8s ease-out;
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1.1;
+      color: var(--charcoal);
+      margin-bottom: 1rem;
+      animation: fadeUp 0.8s ease-out 0.1s both;
+    }
+
+    .hero-title span {
+      color: var(--rose);
+      font-style: italic;
+    }
+
+    .hero-sub {
+      font-size: 1.2rem;
+      color: var(--muted);
+      max-width: 500px;
+      margin: 0 auto 2rem;
+      animation: fadeUp 0.8s ease-out 0.2s both;
+    }
+
+    .btn-blossom {
+      background: var(--rose);
+      color: white !important;
+      padding: 0.9rem 2.5rem;
+      border-radius: 50px;
+      font-weight: 600;
       border: none;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.9);
+      transition: all 0.3s ease;
+      animation: fadeUp 0.8s ease-out 0.3s both;
+    }
+
+    .btn-blossom:hover {
+      background: var(--deep-rose);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(183, 110, 121, 0.35);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ===== Featured Flowers ===== */
+    .products-section {
+      padding: 6rem 0;
+      background: white;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 3rem;
+    }
+
+    .flower-card {
+      border: none;
+      border-radius: 24px;
+      overflow: hidden;
+      background: var(--cream);
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      height: 100%;
+    }
+
+    .flower-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 25px 50px rgba(139, 77, 90, 0.15);
+    }
+
+    .flower-card .img-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4/5;
+    }
+
+    .flower-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+
+    .flower-card:hover img {
+      transform: scale(1.08);
+    }
+
+    .flower-card .card-body {
+      padding: 1.75rem;
+    }
+
+    .flower-card h5 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .flower-card .btn-buy {
+      background: transparent;
+      color: var(--rose);
+      border: 2px solid var(--rose);
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 600;
       transition: all 0.3s ease;
     }
 
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 30px rgba(214, 51, 132, 0.3);
+    .flower-card .btn-buy:hover {
+      background: var(--rose);
+      color: white;
+    }
+
+    /* ===== Testimonials ===== */
+    .testimonial-section {
+      padding: 6rem 0;
+      background: linear-gradient(180deg, var(--blush) 0%, var(--cream) 100%);
+    }
+
+    .testimonial-card {
+      background: white;
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+      border: none;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .testimonial-card p {
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--charcoal);
+      line-height: 1.7;
+    }
+
+    .testimonial-card .quote-icon {
+      font-size: 2.5rem;
+      color: var(--blush);
+      opacity: 0.8;
+    }
+
+    #testimonialCarousel {
+      position: relative;
+      padding: 0 60px;
+    }
+
+    .carousel-control-prev, .carousel-control-next {
+      width: 48px;
+      height: 48px;
+      background: var(--rose);
+      border-radius: 50%;
+      opacity: 1;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .carousel-control-prev { left: 0; }
+    .carousel-control-next { right: 0; }
+
+    /* ===== Footer ===== */
+    footer {
+      background: var(--charcoal);
+      color: var(--cream);
+      padding: 4rem 0 2rem;
+    }
+
+    footer h5 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    footer a {
+      color: rgba(250, 248, 245, 0.85);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    footer a:hover { color: var(--blush); }
+
+    .whatsapp-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #25D366;
+      color: white !important;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-weight: 600;
+    }
+
+    .whatsapp-link:hover { color: white !important; opacity: 0.9; }
+
+    .footer-bottom {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.9rem;
+      color: rgba(250, 248, 245, 0.6);
     }
   </style>
 </head>
-
 <body>
 
 <!-- ================= NAVBAR ================= -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-pink">
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="index.html">🌼 Transflower</a>
+    <a class="navbar-brand" href="index.html">Transflower</a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto gap-2">
+      <ul class="navbar-nav ms-auto align-items-center gap-3">
         <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="product.html">Products</a></li>
         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
         <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+        <li class="nav-item">
+          <form class="d-flex">
+            <input class="form-control search-input" type="search" placeholder="Search flowers" style="width: 160px;">
+          </form>
+        </li>
       </ul>
     </div>
   </div>
-   <form class="d-flex ms-3">
-        <input class="form-control" type="search" placeholder="Search flowers">
-      </form>
-    </div>
-  </div>
-</nav>
 </nav>
 
-<!-- ================= HERO SECTION ================= -->
-<section class="hero-section text-center py-5">
+<!-- ================= HERO ================= -->
+<section class="hero-section">
   <div class="container">
-    <h1 class="fw-bold">Welcome to Transflower Store</h1>
-    <p class="lead">Beautiful flowers, delivered fresh to your doorstep.</p>
-    <a href="product.html" class="btn btn-primary btn-lg mt-3">Shop Now</a>
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-8">
+        <div class="hero-badge">Fresh Blooms • Same Day Delivery</div>
+        <h1 class="hero-title">Where <span>Beauty</span> Blossoms</h1>
+        <p class="hero-sub">Curated bouquets delivered fresh to your doorstep. Say it with flowers—elegantly.</p>
+        <a href="product.html" class="btn btn-blossom">Explore Collection</a>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ================= PRODUCTS ================= -->
-<section class="py-5">
+<!-- ================= FEATURED FLOWERS ================= -->
+<section class="products-section">
   <div class="container">
-    <h2 class="text-center mb-5 fw-bold">Our Featured Flowers</h2>
+    <p class="section-label text-center">Handpicked for You</p>
+    <h2 class="section-title text-center">Featured Blooms</h2>
 
     <div class="row g-4">
       <div class="col-md-4">
-        <div class="card text-center h-100">
-          <img src="./image/red rose.jpg" class="card-img-top product-img" alt="Red Roses">
-          <div class="card-body">
-            <h5 class="fw-bold">Red Roses</h5>
-            <p>Elegant bouquet for special moments.</p>
-            <button class="btn btn-primary">Buy Now</button>
+        <div class="card flower-card">
+          <div class="img-wrap">
+            <img src="./image/red rose.jpg" alt="Red Roses">
+          </div>
+          <div class="card-body text-center">
+            <h5>Red Roses</h5>
+            <p class="text-muted mb-3">Elegant bouquet for special moments.</p>
+            <a href="product.html" class="btn btn-buy">Buy Now</a>
           </div>
         </div>
       </div>
 
       <div class="col-md-4">
-        <div class="card text-center h-100">
-          <img src="./image/tublips.jpg" class="card-img-top product-img" alt="Tulip Flowers">
-          <div class="card-body">
-            <h5 class="fw-bold">Tulip Delight</h5>
-            <p>Fresh tulips to brighten your day.</p>
-            <button class="btn btn-primary">Buy Now</button>
+        <div class="card flower-card">
+          <div class="img-wrap">
+            <img src="./image/tublips.jpg" alt="Tulips">
+          </div>
+          <div class="card-body text-center">
+            <h5>Tulip Delight</h5>
+            <p class="text-muted mb-3">Fresh tulips to brighten your day.</p>
+            <a href="product.html" class="btn btn-buy">Buy Now</a>
           </div>
         </div>
       </div>
 
       <div class="col-md-4">
-        <div class="card text-center h-100">
-          <img src="./image/sun.jpg" class="card-img-top product-img" alt="Sunflower">
-          <div class="card-body">
-            <h5 class="fw-bold">Sunflower Joy</h5>
-            <p>Bring sunshine into your home.</p>
-            <button class="btn btn-primary">Buy Now</button>
+        <div class="card flower-card">
+          <div class="img-wrap">
+            <img src="./image/sun.jpg" alt="Sunflower">
+          </div>
+          <div class="card-body text-center">
+            <h5>Sunflower Joy</h5>
+            <p class="text-muted mb-3">Bring sunshine into your home.</p>
+            <a href="product.html" class="btn btn-buy">Buy Now</a>
           </div>
         </div>
       </div>
@@ -130,78 +453,75 @@
 </section>
 
 <!-- ================= TESTIMONIALS ================= -->
-<section class="container my-5">
-  <h2 class="text-center mb-4 fw-bold">What Our Customers Say</h2>
+<section class="testimonial-section">
+  <div class="container">
+    <p class="section-label text-center">Kind Words</p>
+    <h2 class="section-title text-center">What Our Customers Say</h2>
 
-  <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner text-center">
-
-      <div class="carousel-item active">
-        <p>"Transflower never disappoints! My anniversary bouquet was perfect."</p>
-        <footer class="blockquote-footer">Sneha K.</footer>
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="testimonial-card">
+            <div class="quote-icon mb-2">"</div>
+            <p>"Transflower never disappoints! My anniversary bouquet was perfect—fresh, fragrant, and exactly as promised."</p>
+            <footer class="blockquote-footer mt-3" style="color: var(--rose);">Sneha K.</footer>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="testimonial-card">
+            <div class="quote-icon mb-2">"</div>
+            <p>"Fresh flowers and fast delivery—simply beautiful! Will definitely order again."</p>
+            <footer class="blockquote-footer mt-3" style="color: var(--rose);">Rahul M.</footer>
+          </div>
+        </div>
       </div>
 
-      <div class="carousel-item">
-        <p>"Fresh flowers and fast delivery — simply beautiful!"</p>
-        <footer class="blockquote-footer">Rahul M.</footer>
-      </div>
-
+      <button class="carousel-control-prev position-absolute" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next position-absolute" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
     </div>
-
-    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-
-    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
   </div>
 </section>
 
 <!-- ================= FOOTER ================= -->
-<footer class="bg-pink text-white pt-5">
+<footer>
   <div class="container">
     <div class="row">
-
-      <div class="col-md-4">
-        <h5 class="fw-bold">🌼 Transflower</h5>
-        <p>Delivering fresh flowers with love and care.</p>
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h5>Transflower</h5>
+        <p class="opacity-75">Delivering fresh flowers with love and care since day one.</p>
       </div>
-
-      <div class="col-md-4">
-        <h5 class="fw-bold">Quick Links</h5>
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h5>Quick Links</h5>
         <ul class="list-unstyled">
-          <li><a href="index.html" class="text-white text-decoration-none">Home</a></li>
-          <li><a href="product.html" class="text-white text-decoration-none">Products</a></li>
-          <li><a href="about.html" class="text-white text-decoration-none">About</a></li>
-          <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="product.html">Products</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
-
       <div class="col-md-4">
-        <h5 class="fw-bold">Contact</h5>
-        <p>Email: kharatsachin012.com</p>
-
-        <!-- WhatsApp Auto Link -->
-        <p>
-          <a href="https://wa.me/919637661382?text=Hello%20I%20want%20to%20order%20flowers"
-             target="_blank"
-             class="text-white text-decoration-none">
-            <i class="bi bi-whatsapp"></i> Chat on WhatsApp (9637661382)
-          </a>
-        </p>
+        <h5>Get in Touch</h5>
+        <p class="opacity-75 mb-2">Email: kharatsachin012.com</p>
+        <a href="https://wa.me/919637661382?text=Hello%20I%20want%20to%20order%20flowers" target="_blank" class="whatsapp-link">
+          <i class="bi bi-whatsapp"></i> Chat on WhatsApp
+        </a>
       </div>
-
     </div>
-
-    <hr class="border-light">
-
-    <div class="text-center pb-3">
-      © 2025 Transflower Store | Designed by <strong>Sachin Kharat</strong>
+    <div class="footer-bottom text-center">
+      © 2025 Transflower Store — Designed by <strong>Sachin Kharat</strong>
     </div>
   </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.addEventListener('scroll', () => {
+    document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 50);
+  });
+</script>
 </body>
 </html>
