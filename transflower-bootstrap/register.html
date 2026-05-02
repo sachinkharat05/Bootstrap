@@ -149,22 +149,61 @@
 </footer>
 
 <!-- ================= JS ================= -->
+<script src="app.js"></script>
 <script>
   const form = document.getElementById("registerForm");
   const alertBox = document.getElementById("successAlert");
+  let errorAlert = null;
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
+    // Remove previous error alert if exists
+    if (errorAlert) errorAlert.remove();
+
     if (!form.checkValidity()) {
       e.stopPropagation();
+      form.classList.add("was-validated");
     } else {
-      alertBox.classList.remove("d-none");
-      form.reset();
-      form.classList.remove("was-validated");
-    }
+      const firstName = form.querySelectorAll('input[type="text"]')[0].value;
+      const lastName = form.querySelectorAll('input[type="text"]')[1].value;
+      const email = form.querySelector('input[type="email"]').value;
+      const password = form.querySelectorAll('input[type="password"]')[0].value;
+      const confirmPassword = form.querySelectorAll('input[type="password"]')[1].value;
 
-    form.classList.add("was-validated");
+      // Validate passwords match
+      if (password !== confirmPassword) {
+        errorAlert = document.createElement('div');
+        errorAlert.className = 'alert alert-danger text-center mb-3';
+        errorAlert.textContent = 'Passwords do not match!';
+        form.parentElement.insertBefore(errorAlert, form);
+        return;
+      }
+
+      const result = registerUser({
+        name: `${firstName} ${lastName}`,
+        email: email,
+        password: password,
+        phone: '9000000000'
+      });
+
+      if (result.success) {
+        alertBox.classList.remove("d-none");
+        form.reset();
+        form.classList.remove("was-validated");
+        
+        // Redirect to login after 2 seconds
+        setTimeout(() => {
+          window.location.href = "login.html";
+        }, 2000);
+      } else {
+        // Show error alert
+        errorAlert = document.createElement('div');
+        errorAlert.className = 'alert alert-danger text-center mb-3';
+        errorAlert.textContent = result.message;
+        form.parentElement.insertBefore(errorAlert, form);
+      }
+    }
   });
 </script>
 

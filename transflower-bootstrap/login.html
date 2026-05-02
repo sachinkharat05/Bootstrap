@@ -121,22 +121,53 @@
 </footer>
 
 <!-- ================= JS ================= -->
+<script src="app.js"></script>
 <script>
   const form = document.getElementById("loginForm");
   const alertBox = document.getElementById("successAlert");
+  let errorAlert = null;
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
+    // Remove previous error alert if exists
+    if (errorAlert) errorAlert.remove();
+
     if (!form.checkValidity()) {
       e.stopPropagation();
+      form.classList.add("was-validated");
     } else {
-      alertBox.classList.remove("d-none");
-      form.reset();
-      form.classList.remove("was-validated");
-    }
+      const email = form.querySelector('input[type="email"]').value;
+      const password = form.querySelector('input[type="password"]').value;
 
-    form.classList.add("was-validated");
+      const result = loginUser(email, password);
+
+      if (result.success) {
+        alertBox.classList.remove("d-none");
+        form.reset();
+        form.classList.remove("was-validated");
+        
+        // Update navbar and redirect after 1.5 seconds
+        updateNavbar();
+        setTimeout(() => {
+          window.location.href = "index.html";
+        }, 1500);
+      } else {
+        // Show error alert
+        errorAlert = document.createElement('div');
+        errorAlert.className = 'alert alert-danger text-center mb-3';
+        errorAlert.textContent = result.message;
+        form.parentElement.insertBefore(errorAlert, form);
+      }
+    }
+  });
+
+  // Demo credentials info
+  document.addEventListener('DOMContentLoaded', function() {
+    const infoMsg = document.createElement('div');
+    infoMsg.className = 'alert alert-info text-center small mt-3';
+    infoMsg.innerHTML = '<strong>Demo Login:</strong> john@example.com / pass123 or jane@example.com / pass123';
+    form.parentElement.appendChild(infoMsg);
   });
 </script>
 

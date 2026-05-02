@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Dashboard | Transflower</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- Custom theme -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="page-dashboard">
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Transflower</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center gap-3">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="product.html">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="cart.html" style="position: relative;"><i class="bi bi-cart3"></i> Cart</a></li>
+        <li class="nav-item"><a class="nav-link active" href="dashboard.html">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" id="logoutBtn" href="#">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= DASHBOARD ================= -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="section-title mb-4">My Dashboard</h2>
+
+    <div class="row g-4">
+      <!-- Sidebar -->
+      <div class="col-md-3">
+        <div class="glass-card">
+          <div class="text-center mb-4">
+            <div class="avatar mb-3" style="width: 80px; height: 80px; background: linear-gradient(135deg, #b76e79, #e8d5d0); border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+              <i class="bi bi-person-fill"></i>
+            </div>
+            <h5 id="userName" class="fw-bold">User Name</h5>
+            <p id="userEmail" class="text-muted small mb-0">user@email.com</p>
+          </div>
+
+          <hr>
+
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <button class="btn btn-link text-start w-100" onclick="showSection('orders')">
+                <i class="bi bi-receipt me-2"></i> My Orders
+              </button>
+            </li>
+            <li class="mb-2">
+              <button class="btn btn-link text-start w-100" onclick="showSection('profile')">
+                <i class="bi bi-person me-2"></i> Profile Settings
+              </button>
+            </li>
+            <li class="mb-2">
+              <button class="btn btn-link text-start w-100" onclick="logoutUser()">
+                <i class="bi bi-box-arrow-right me-2"></i> Logout
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="col-md-9">
+        <!-- Orders Section -->
+        <div id="ordersSection">
+          <div class="glass-card">
+            <h5 class="fw-bold mb-4">My Orders</h5>
+            <div id="ordersContainer">
+              <!-- Orders will be loaded here -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Profile Section -->
+        <div id="profileSection" style="display: none;">
+          <div class="glass-card">
+            <h5 class="fw-bold mb-4">Profile Information</h5>
+            
+            <form id="profileForm">
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Full Name</label>
+                <input type="text" class="form-control" id="fullName" readonly>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Email Address</label>
+                <input type="email" class="form-control" id="emailAddress" readonly>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Phone Number</label>
+                <input type="tel" class="form-control" id="phoneNumber" placeholder="+91 XXXXX XXXXX" required>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Member Since</label>
+                <input type="text" class="form-control" id="memberSince" readonly>
+              </div>
+
+              <button type="submit" class="btn btn-rose">Update Profile</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h5>Transflower</h5>
+        <p class="opacity-75 mb-0">Curated bouquets and fresh blooms, delivered with care.</p>
+      </div>
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="product.html">Products</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5>Connect</h5>
+        <p class="opacity-75 mb-2">Email: kharatsachin012.com</p>
+        <a href="https://wa.me/919637661382?text=Hello%20I%20want%20to%20order%20flowers" target="_blank"
+           class="btn btn-success whatsapp-btn w-auto px-3">
+          <i class="bi bi-whatsapp"></i>
+          <span>Chat on WhatsApp</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom text-center">
+      © 2025 Transflower Store — Designed by <strong>Sachin Kharat</strong>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= JS ================= -->
+<script src="app.js"></script>
+<script>
+  // Check if user is logged in
+  function checkUserLogin() {
+    const currentUser = getCurrentUser();
+    if (!currentUser) {
+      alert('Please login to access dashboard!');
+      window.location.href = 'login.html';
+      return;
+    }
+
+    // Display user info
+    document.getElementById('userName').textContent = currentUser.name;
+    document.getElementById('userEmail').textContent = currentUser.email;
+    document.getElementById('fullName').value = currentUser.name;
+    document.getElementById('emailAddress').value = currentUser.email;
+    document.getElementById('phoneNumber').value = currentUser.phone || '';
+    document.getElementById('memberSince').value = new Date().toLocaleDateString();
+
+    displayOrders();
+  }
+
+  // Display user orders
+  function displayOrders() {
+    const orders = getUserOrders();
+    const container = document.getElementById('ordersContainer');
+
+    if (orders.length === 0) {
+      container.innerHTML = `
+        <div class="alert alert-info">
+          <p class="mb-0">You haven't placed any orders yet. <a href="product.html">Start shopping!</a></p>
+        </div>
+      `;
+      return;
+    }
+
+    container.innerHTML = orders.map(order => `
+      <div class="card mb-3">
+        <div class="card-body">
+          <div class="row align-items-center">
+            <div class="col-md-3">
+              <strong>${order.orderId}</strong>
+              <p class="text-muted small mb-0">${order.orderDate}</p>
+            </div>
+            <div class="col-md-3">
+              <p class="mb-1"><strong>${order.items.length}</strong> item(s)</p>
+              <p class="text-muted small mb-0">Total: ₹${order.total.toFixed(2)}</p>
+            </div>
+            <div class="col-md-3">
+              <span class="badge bg-warning">${order.status}</span>
+            </div>
+            <div class="col-md-3 text-end">
+              <button class="btn btn-sm btn-outline-primary" onclick="viewOrderDetails('${order.orderId}')">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  // View order details
+  function viewOrderDetails(orderId) {
+    const orders = getUserOrders();
+    const order = orders.find(o => o.orderId === orderId);
+
+    if (order) {
+      alert(`Order Details:\n\nOrder ID: ${order.orderId}\nDate: ${order.orderDate}\nTotal: ₹${order.total.toFixed(2)}\nStatus: ${order.status}\nDelivery Address: ${order.address}\nPayment Method: ${order.paymentMethod}\n\nItems:\n${order.items.map(item => `- ${item.name} x${item.quantity} (₹${item.price})`).join('\n')}`);
+    }
+  }
+
+  // Show section
+  function showSection(section) {
+    document.getElementById('ordersSection').style.display = section === 'orders' ? 'block' : 'none';
+    document.getElementById('profileSection').style.display = section === 'profile' ? 'block' : 'none';
+  }
+
+  // Logout
+  function logoutUserDashboard() {
+    logoutUser();
+    alert('Logged out successfully!');
+    window.location.href = 'index.html';
+  }
+
+  // Handle logout button
+  document.getElementById('logoutBtn').addEventListener('click', function(e) {
+    e.preventDefault();
+    logoutUserDashboard();
+  });
+
+  // Handle profile form submission
+  document.getElementById('profileForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Profile updated successfully!');
+  });
+
+  // Initialize
+  document.addEventListener('DOMContentLoaded', function() {
+    checkUserLogin();
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
